@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<title>Enforcer | Enforce</title>
+		<script type="text/javascript" src="javascript.js"></script>
+		<style>
+		
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			
+			#container {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				background-color: #F0E7E8;
+				height: 100%;
+				width: 100%;
+			}
+			
+			.a {
+				font-size:30px;
+				color: black;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			.a:hover {
+				font-size: 30px;
+				color: white;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			.b {
+				font-size:30px;
+				color: black;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			.c {
+				font-size:20px;
+				color: black;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			#main {
+				position:fixed;
+				top: 20%;
+				left: 20%;	
+				width: 60%;
+				height: 60%;
+				background-color: #F54A7E;
+			}
+			
+			#top {
+				width: 96%;
+				background-color: #B8EEF8;
+				position: relative;
+				padding: 2%;
+			}
+			
+			
+			
+			a {
+				color: black;
+				text-decoration: none;
+			}
+			
+			a:hover {
+				color: white;
+				text-decoration: none;
+			}
+			
+			#button2 {
+				width: 20%;
+				background-color: #F54A7E;
+				border-radius: 20px 20px;
+				position: absolute;
+				left: 4%;
+				padding: 2%;
+			}
+			
+			#button2:hover {
+				background-color: #C5AFB2;
+				
+			}
+			
+			input {
+				border: 0px;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<div id="container">
+			<div id="header">
+				<div id="main">
+					<div id="top">
+						<font class="a"><i>Enforcer | Enforce</i></font><br/>
+					</div>
+					<center>
+                                            <form action="enforcer.html" name="enforcerform" onsubmit="return validateEnforcer();">
+					<table cellpadding="20px" width="100%">
+						<tr>
+							<pre><td><font class="c">Plate no:</font>
+							<input type="text" id="platenoID" name="plateno"  style="width:100%; padding:10px;" ></td>
+							<td><font class="c">Route:</font>
+							<input type="text" name="route" id="routeID" style="width:100%; padding:10px;"></td></pre>
+						</tr>
+						<tr>
+							<pre><td><font class="c">Operator's Name:</font>
+							<input type="text" name="opname" id="opnameID" style="width:100%; padding:10px;"></td>
+							<td><font class="c">Driver's Name:</font>
+							<input type="text" name="drvname" id="drvnameID" style="width:100%; padding:10px;"></td></pre>
+						</tr>
+					</table>
+						<br/>
+						<input type="submit" value="Search" style="background-color: #B8EEF8; border: none; border-radius: 20px 20px; padding: 10px; width:100px; font-size: 20px;">
+                                            <form/>
+					</center>
+				</div>
+			</div>
+		</div>
+	
+	</body>
+</html>
