@@ -3,7 +3,7 @@
 			
 			var x = document.getElementById("usernameID").value;
 			if (x=="username" || x==null || x== "") {
-				alert("Usersame must be filled out.");
+				alert("Username must be filled out.");
 				return false;
 			}
 			x = document.getElementById("passID").value;
@@ -43,7 +43,7 @@
 				return false;
 			}
 			
-			else return true;
+			else {alert("You have successfully added/updated an entry to the Database!");return true;}
 		   
 		}
 
@@ -58,4 +58,12 @@
 			
 			else return true;
 		   
+		}
+
+		function option()
+		{
+			var x = document.getElementById("usernameID").value;
+			if (x=="admin") return "admin.html";
+			else return "enforcer.html";
+			
 		}
