@@ -167,7 +167,7 @@
 						<a href="login.jsp" style="display: block;"><div id="button2"><center>Login </center></div></a>
 					</div>
 					<div id="right">
-						<form action="SignUp" name="signupform" onsubmit="return validateLogIn();">
+						<form action="SignUp" name="signupform" method="post" onsubmit="return validateLogIn();">
 							<font class="b"><i>Sign up</i></font><br/><hr color="white"/><br/>
 							
 							<table width="100%">

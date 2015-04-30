@@ -151,6 +151,3 @@
 	</body>
 </html>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	<c:if test="${invalid eq 'true'}"><c:out value="TryAgain"></c:out>   </c:if>
-	

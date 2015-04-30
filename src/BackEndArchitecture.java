@@ -28,6 +28,11 @@ public class BackEndArchitecture extends HttpServlet {
     }
     String Username[] = new String[9999];
     String Password[] = new String[9999];
+    String FirstName[] = new String[9999];
+    String LastName[] = new String[9999];
+    String Email[] = new String[9999];
+    String Hadd[] = new String[9999];
+    String Contact[] = new String[9999];
 	public int arrayCount=0;
     public void fileRead(String fileName) throws IOException
 	{
@@ -48,6 +53,11 @@ public class BackEndArchitecture extends HttpServlet {
 		String finalInput[] = rawInput.split(",");
 		Username[arrayCount] = finalInput[0];
 		Password[arrayCount] = finalInput[1];
+		FirstName[arrayCount] = finalInput[2];
+		LastName[arrayCount] = finalInput[3];
+		Email[arrayCount] = finalInput[4];
+		Hadd[arrayCount] = finalInput[5];
+		Contact[arrayCount] = finalInput[6];
 		arrayCount++;
 	}
 
@@ -65,7 +75,6 @@ public class BackEndArchitecture extends HttpServlet {
 		String username= request.getParameter("username");
 		String password= request.getParameter("password");
 		fileRead("list.csv");
-		System.out.println(username+" has signed in.");
 		boolean notValid=false;
 		PrintWriter out = response.getWriter();
 		
@@ -73,11 +82,12 @@ public class BackEndArchitecture extends HttpServlet {
 		{
 			Cookie ck= new Cookie("username",username);
 			response.addCookie(ck);
+			System.out.println("admin"+" has signed in.");
 			response.sendRedirect("admin.jsp");
 		}
 		else if(notValid==false)
 	
-		for (int i=0; i<username.length(); i++)
+		for (int i=0; i<Username.length; i++)
 		{
 			try
 			{
@@ -86,6 +96,7 @@ public class BackEndArchitecture extends HttpServlet {
 					Cookie ck= new Cookie("username",username);
 					response.addCookie(ck);
 					response.sendRedirect("enforcer.jsp");
+					System.out.println(FirstName[i]+" "+LastName[i]+" has signed in.");
 					notValid=false;
 					break;
 				}

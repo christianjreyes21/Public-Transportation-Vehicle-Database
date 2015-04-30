@@ -12,7 +12,7 @@
 				alert("Enter the plate no.");
 				return false;
 			}
-			}
+		}
 			else return true;
 		   
 		}
@@ -104,19 +104,28 @@
 			input {
 				border: 0px;
 			}
+			
+			#logout {
+			position:absolute; top: 10px;left: 90%;border-radius:20px/20px; background-color: white; width:90px; height:20px; padding: 10px;
+			}
+			
+			.e:hover {
+			color: pink;
+			}
 		</style>
 	</head>
 	
 	<body>
 	
 		<div id="container">
+		<div id="logout"> &nbsp; &nbsp; <a class="e" href="index.jsp">Log out</a></div>
 			<div id="header">
 				<div id="main">
 					<div id="top">
 						<font class="a"><i><center>Enforcer | Enforce</center></i></font>
 					</div>
 					<center>
-					<form name="enforcerform" onsubmit="return validateEnforcer();">
+					<form action="PUV_Search" name="enforcerform" method="post" onsubmit="return validateEnforcer();">
 					<table cellpadding="10%" width="100%">
 						<tr>
 							<td width="30%"><font class="c">Plate no:</font></td>
