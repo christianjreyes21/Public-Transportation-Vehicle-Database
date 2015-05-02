@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,6 +45,7 @@ public class PUV_Submit extends HttpServlet {
 		String opname= request.getParameter("opname");
 		String drvname= request.getParameter("drvname");
 		
+		setNew(plateno,route,opname,drvname);
 		fileWrite("entries.csv",plateno+","+route+","+opname+","+drvname);
 		response.sendRedirect("admin.jsp");
 	}
@@ -53,6 +57,22 @@ public class PUV_Submit extends HttpServlet {
 			new PrintWriter(new FileWriter(outputFile, true));
 		output.println(data);
 		output.close();
+	}
+	
+	public void setNew(String plateNoReceive, String routeReceive, String opNameReceive, String drvNameReceive)
+	{
+		try 
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/PUV_DATABASE", "root", "1234");
+			CallableStatement stmt = con.prepareCall("{call setPUV(?,?,?,?)}");
+			stmt.setString(1, plateNoReceive);
+			stmt.setString(2, routeReceive);
+			stmt.setString(3, opNameReceive);
+			stmt.setString(4, drvNameReceive);
+			stmt.execute();
+		} catch (Exception e) {System.out.println(e);}
 	}
 
 }
